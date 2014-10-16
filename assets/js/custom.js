@@ -99,12 +99,11 @@ function setQuestions(mode) {
   questionList = $.grep(questions, function(element) {
       return element.mode_master == mode;
   });
-
     questionList = shuffle(questionList);
 }
 
-function showQuestion() {
-    var question = questionList.pop();
+function showQuestion(pos) {
+    var question = questionList[pos];
     console.log(question);
     return question;
 }
