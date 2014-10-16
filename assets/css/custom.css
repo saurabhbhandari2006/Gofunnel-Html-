@@ -7,19 +7,19 @@ body{
     width: 640px;
     height: 480px;
     position: relative;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     margin: auto;
     background-image: url('../image/background.png');
 }
 #salesfunnel-and-toughmarket{
     width: 100%;
     height: 10%;
-    border: 1px solid yellow;
+    /*border: 1px solid yellow;*/
     position: absolute;
-    margin-top: 5%;
+    margin-top: 15%;
 }
 #salesfunnel{
-    background-color: mediumpurple;
+    background-color: #2e5aa3;
     height: 100%;
     width: 49%;
     left: 0;
@@ -29,7 +29,7 @@ body{
     position: relative;
 }
 #toughtmarket{
-    background-color:lightblue;
+    background-color:#abaed1;
     height: 100%;
     width: 49%;
     right: 0;
@@ -56,53 +56,82 @@ body{
    left: 0;
 }
 #newhire-and-bigdeal{
-    border: 1px solid green;
+    /*border: 1px solid green;*/
     height: 26%;
-    margin-top: 14%;
+    margin-top: 24%;
     position: absolute;
     width: 100%;
 }
 #newhire{
-    background-color: deepskyblue;
+    background-color: #8fcbe8;
     height: 100%;
     width: 29%;
     left: 0;
     font-size: 1em;
     color: white;
-    /*float: left;*/
+    float: left;
     position: relative;
-    text-align: center;
+    /*text-align: center;*/
 }
 #button1{
     right: -23%;
     width: 52%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*.game-data{*/
-    /*display: none;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*position: absolute;*/
-/*}*/
-/*#game-play-div{*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*border: 1px solid green;*/
-    /*display: none;*/
-/*}*/
-/*#back{*/
-    /*bottom: 0;*/
+#bigdeal{
+    background-color:#e4b965;
+    height: 100%;
+    width: 29%;
     /*right: 0;*/
-    /*position: absolute;*/
-/*}*/
+    font-size: 1.1em;
+    color: white;
+    float: left;
+    position: relative;
+    margin-left: 7%;
+}
+#button4{
+    left: -25%;
+    width: 52%;
+}
+#image-center{
+    width: 30%;
+    height: 100%;
+    margin-left: 5%;
+    /*border: 1px solid red;*/
+    float: left;
+    position: relative;
+}
+#center-image{
+    width: 78%;
+    height: 100%;
+    position: absolute;
+}
+
+#great-sales-challenge{
+  position: absolute;
+    width: 100%;
+    height: 20%;
+    margin-top: 43%;
+    /*border: 1px solid green;*/
+}
+#great-sales-image-box{
+    /*border: 1px solid yellow;*/
+    height: 100%;
+    margin-left: 19%;
+    position: absolute;
+    width: 61%;
+}
+#sales-image{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
