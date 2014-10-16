@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html>
+
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>Go Funnel</title>
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 
+    <script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="assets/js/custom.js" type="text/javascript"></script>
+    <script src="assets/js/custom-data.js" type="text/javascript"></script>
 </head>
-<body>
-<div id="game-wrapper">
-    <div id="game-select">
-        <div id="salesfunnel-and-toughmarket">
-            <div id="salesfunnel"><span style="margin-top: 4%;position: absolute">Rock the sales funnel</span>
 
-                    <img id="button2"  class="game-image" src="assets/image/image3.png">
-
-            </div>
-            <div id="toughtmarket"><span style="margin: 4% 0 0 47%;position: absolute">Win a tough market</span>
-                <img id="button3" class="game-image" src="assets/image/image4.png">
+<body onload="initGame()">
+    <div id="game-wrapper">
+        <div id="gameSelect">
+            <div id="game1" class="games">SELECT GAME 1</div>
+            <div id="game2" class="games">SELECT GAME 2</div>
+            <div id="game3" class="games">SELECT GAME 3</div>
+            <div id="game4" class="games">SELECT GAME 4</div>
         </div>
 
+        <div id="game">
+            <div id="qid" style="display: none"></div>
+            <table cellspacing="10">
+                <tr>
+                    <td>
+                        <div id="question-statement"></div>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td>
+                        <div id="opta" class="answer"></div>
+                    </td>
+                </tr>
 
-        <!--</div>-->
+                <tr>
+                    <td>
+                        <div id="optb" class="answer"></div>
+                    </td>
+                </tr>
 
-        <!--<span>Game 2</span>-->
+                <tr>
+                    <td>
+                        <div id="optc" class="answer"></div>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td>
+                        <div id="optd" class="answer"></div>
+                    </td>
+                </tr>
 
-        <!--</div>-->
-        <!--<div id="3" class="games">-->
-        <!--<span>Game 3</span>-->
+                <tr>
+                    <td>
+                        <div id="result"></div>
+                    </td>
+                </tr>
 
+            </table>
+        </div>
 
-        <!--</div>-->
-        <!--<div id="4" class="games">-->
-        <!--<span>Game 4</span>-->
+        <div id="message"></div>
 
-
+        <table border="0" id="endResult" style="margin: auto; width: 50%;margin-top: 20%"></table>
     </div>
-        <div id="newhire-and-bigdeal">
-            <div id="newhire"><span style="margin-top: 4%;position: absolute">Now your product<br>better than<br> a new hire</span>
-                <img id="button1"  class="game-image" src="assets/image/image2_old.png">
-            </div>
-        </div>
-</div>
-
-<!--<div id="game-play-div">-->
-<!--<div id="game-box-1" class="game-data">-->
-<!--<div id="question-box">-->
-<!--saurabh-->
-<!--</div>-->
-<!--</div>-->
-<!--<div id="game-box-2" class="game-data">-->
-<!--<p>Welcome to game 2</p>-->
-<!--</div>-->
-<!--<div id="game-box-3" class="game-data">-->
-<!--<p>Welcome to game 3</p>-->
-<!--</div>-->
-<!--<div id="game-box-4" class="game-data">-->
-<!--<p>Welcome to game 4</p>-->
-<!--</div>-->
-<!--<button id="back" onclick="back();">Back</button>-->
-<!--</div>-->
-
-
-</div>
-<script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="assets/js/custom.js" type="text/javascript"></script>
 </body>
+
+
 </html>
