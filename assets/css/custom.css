@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-image: url('../image/background.png');
 }
 #game-wrapper{
     width: 640px;
@@ -9,30 +9,100 @@ body{
     position: relative;
     border: 1px solid red;
     margin: auto;
-    background-color: #ffffff;
+    background-image: url('../image/background.png');
 }
-.games{
+#salesfunnel-and-toughmarket{
+    width: 100%;
+    height: 10%;
+    border: 1px solid yellow;
+    position: absolute;
+    margin-top: 5%;
+}
+#salesfunnel{
+    background-color: mediumpurple;
+    height: 100%;
+    width: 49%;
+    left: 0;
+    font-size: 1em;
+    color: white;
     float: left;
-    margin-left: 10%;
-    /*position: absolute;*/
-    width: 10%;
-    height: 5%;
-    border: 1px solid #ffff00;
+    position: relative;
 }
-.game-data{
-    display: none;
-    width: 100%;
+#toughtmarket{
+    background-color:lightblue;
     height: 100%;
-    position: absolute;
-}
-#game-play-div{
-    width: 100%;
-    height: 100%;
-    border: 1px solid green;
-    display: none;
-}
-#back{
-    bottom: 0;
+    width: 49%;
     right: 0;
+    font-size: 1em;
+    color: white;
+    float: right;
+    position: relative;
+
+}
+/*.games{*/
+    /*border: 1px solid #ffff00;*/
+    /*height: 100%;*/
+    /*margin-left: 70%;*/
+    /*position: relative;*/
+    /*width: 30%;*/
+/*}*/
+.game-image{
     position: absolute;
 }
+#button2{
+    right: 0;   
+}
+#button3{
+   left: 0;
+}
+#newhire-and-bigdeal{
+    border: 1px solid green;
+    height: 26%;
+    margin-top: 14%;
+    position: absolute;
+    width: 100%;
+}
+#newhire{
+    background-color: deepskyblue;
+    height: 100%;
+    width: 29%;
+    left: 0;
+    font-size: 1em;
+    color: white;
+    /*float: left;*/
+    position: relative;
+    text-align: center;
+}
+#button1{
+    right: -23%;
+    width: 52%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*.game-data{*/
+    /*display: none;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*position: absolute;*/
+/*}*/
+/*#game-play-div{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*border: 1px solid green;*/
+    /*display: none;*/
+/*}*/
+/*#back{*/
+    /*bottom: 0;*/
+    /*right: 0;*/
+    /*position: absolute;*/
+/*}*/
