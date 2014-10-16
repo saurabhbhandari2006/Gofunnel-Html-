@@ -1,5 +1,5 @@
 var answer = [];
-var result = [];
+var result = ["correct","wrong","Correct","wrong","correct"];
 var aed;
 var questionnum;
 
@@ -84,8 +84,7 @@ function game4(id) {
 }
 function init() {
 
-    setQuestions(1);
-    var question = showQuestion();
+    showEndResult();
 
 
 }
@@ -113,6 +112,6 @@ function processAnswer() {
 
 function showEndResult() {
     for(var i=0; i<5; i++){
-        
+        $("#endResult").append("<tr><td align='left'> Question " + (i+1) + "</td><td align='right'>"+ result[i] + "</td></tr>");
     }
 }
