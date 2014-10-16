@@ -1,7 +1,9 @@
-
 var answer = [];
 var result = [];
 var aed;
+var questionnum;
+
+var questionList;
 
 var gameSelected = false;
 
@@ -61,31 +63,50 @@ function showGame(id) {
 }
 
 function game1(id) {
-    getQuestions();
+
+    setQuestions(id);
+
+
 
 
 }
 
 function game2(id) {
-
+    setQuestions(id);
 }
 
 function game3(id) {
-
+    setQuestions(id);
 }
 
 function game4(id) {
+    setQuestions(id);
+}
+function init() {
 
+    setQuestions(1);
+    var question = showQuestion();
+
+    $("#question-statement").append(question.statement);
+    $("#opta").append(question.opta);
+    $("#optb").append(question.optb);
+    $("#optc").append(question.optc);
+    $("#optd").append(question.optd);
 }
 
 
+function setQuestions(mode) {
+  questionList = $.grep(questions, function(element) {
+      return element.mode_master == mode;
+  });
 
-function getQuestions() {
-
+    questionList = shuffle(questionList);
 }
 
-function showQuestions() {
-
+function showQuestion() {
+    var question = questionList.pop();
+    console.log(question);
+    return question;
 }
 
 function processAnswer() {
