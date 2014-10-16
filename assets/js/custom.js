@@ -87,11 +87,7 @@ function init() {
     setQuestions(1);
     var question = showQuestion();
 
-    $("#question-statement").append(question.statement);
-    $("#opta").append(question.opta);
-    $("#optb").append(question.optb);
-    $("#optc").append(question.optc);
-    $("#optd").append(question.optd);
+
 }
 
 
@@ -104,10 +100,19 @@ function setQuestions(mode) {
 
 function showQuestion(pos) {
     var question = questionList[pos];
-    console.log(question);
-    return question;
+    $("#question-statement").append(question.statement);
+    $("#opta").append(question.opta);
+    $("#optb").append(question.optb);
+    $("#optc").append(question.optc);
+    $("#optd").append(question.optd);
 }
 
 function processAnswer() {
 
+}
+
+function showEndResult() {
+    for(var i=0; i<5; i++){
+        
+    }
 }
