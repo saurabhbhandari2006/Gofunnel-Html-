@@ -23,6 +23,7 @@ function gameData(id) {
     });
 
 }
+
 function back(){
     $("#game-select").show();
     $("#game-play-div").hide();
