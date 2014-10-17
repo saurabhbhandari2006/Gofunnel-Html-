@@ -69,22 +69,39 @@ function showQuestion(mode) {
     var id = "#q1"+(qid+1);
     $(id).css({'backgroundImage':"url('assets/image/1.png')"})
     console.log(id);
-    $("#question-statement").text(question.statement);
-    $("#opta").text(question.opta);
-    $("#optb").text(question.optb);
-    $("#optc").text(question.optc);
-    $("#optd").text(question.optd);
+    if(mode == 1 || mode == 3) {
+        $("#question-statement").text(question.statement);
+        $("#opta").text(question.opta);
+        $("#optb").text(question.optb);
+        $("#optc").text(question.optc);
+        $("#optd").text(question.optd);
+    } else {
+        $("#q-statement").text(question.statement);
+        $("#a").text(question.opta);
+        $("#b").text(question.optb);
+        $("#c").text(question.optc);
+        $("#d").text(question.optd);
+    }
+
 
     bindAnswer(mode);
 }
 
 function startGame(mode) {
-    $("#opta").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
-    $("#optb").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
-    $("#optc").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
-    $("#optd").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+    if(mode == 1 || mode == 3) {
+        $("#opta").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+        $("#optb").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+        $("#optc").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+        $("#optd").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+    } else {
+        $("#a").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+        $("#b").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+        $("#c").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+        $("#d").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+    }
+
     var qid = parseInt($("#qid").text());
-    showQuestion();
+    showQuestion(mode);
 
 
 }
@@ -139,6 +156,25 @@ function start(mode) {
 
         startGame(mode);
     });
+
+    $("#start-game-1").on('click', function() {
+        $("#start-page-game2").fadeOut();
+        setTimeout(function() {
+            $("#question-block").fadeIn();
+        }, 500);
+
+        startGame(mode);
+    });
+
+    $("#start-game-2").on('click', function() {
+        $("#start-page-game2").fadeOut();
+        setTimeout(function() {
+            $("#question-block").fadeIn();
+        }, 500);
+
+        startGame(mode);
+    });
+
 }
 
 function bindAnswer(mode) {
@@ -152,22 +188,28 @@ function bindAnswer(mode) {
 }
 
 function processAnswer(answer, mode) {
-    var ans = ""+answer.charAt(answer.length-1)
+
+    if(mode == 1 || mode == 3) {
+        var ans = ""+answer.charAt(answer.length-1);
+    } else {
+        var ans = ""+answer
+    }
+
     var qid = parseInt($("#qid").text());
     if(questionList[qid].correct == ans) {
         $("#"+answer).css({background: 'none repeat scroll 0% 0% green'});
         $("#responser").text("Correct!");
         result.push("Correct");
     } else {
-        if(mode == 3 || mode == 4)
+        if(mode == 2 || mode == 4)
         {
-            $("#message").fadeIn();
-            $("#responser").text("Uh-oh! You lost the client.");
+            $("#"+answer).css({background: 'none repeat scroll 0% 0% red'});
+            $("#gameResult").css({opacity:'1'}).show();
+            $("#gameB").css({opacity:"0.3"});
+            $("#end-message").append("<h2> Uh-oh! You lost the client. </h2>");
             setTimeout(function() {
-                addGame();
-                gameSelected = false;
-                gameSelect();
-            }, 2000)
+                showEndResult(mode);
+            }, 1000);
         } else {
             $("#responser").text("Wrong!");
             $("#"+answer).css({background: 'none repeat scroll 0% 0% red'});
@@ -211,30 +253,31 @@ function nextQuestion(mode) {
 }
 
 function showEndResult(mode) {
-//    $("#gameA").css({opacity: '0.5'});
-//    $("#gameB").css({opacity: '0.5'});
     setTimeout(function() {
         $("#gameResult").css({opacity:"1"}).show();
         $("#gameA").css({opacity:"0.3"});
+        $("#gameB").css({opacity:"0.3"});
     }, 500);
     addGame();
     addAED();
     setTimeout(function() {
-        $("#result-table").append(
-            "<tr>" +
-                "<th style='text-align: center'>Level</th>" +
-                "<th style='text-align: center'>Correct</th>" +
-                "<th style='text-align: center'></th>" +
-            "</tr>"
-        );
-        for(var i=0; i<5; i++){
+        if(mode == 1 || mode == 3) {
             $("#result-table").append(
-                "<tr align='center'>" +
-                    "<td> Question " + (i+1) + "</td>" +
-                    "<td>"+ result[i] + "</td>" +
-                    "<td> <a target='blank' href='#'>Read More</a> </td>"  +
+                "<tr>" +
+                    "<th style='text-align: center'>Level</th>" +
+                    "<th style='text-align: center'>Correct</th>" +
+                    "<th style='text-align: center'></th>" +
                     "</tr>"
             );
+            for(var i=0; i<5; i++){
+                $("#result-table").append(
+                    "<tr align='center'>" +
+                        "<td> Question " + (i+1) + "</td>" +
+                        "<td>"+ result[i] + "</td>" +
+                        "<td> <a target='blank' href='#'>Read More</a> </td>"  +
+                        "</tr>"
+                );
+            }
         }
 
         $("#restart-game").on('click', function() {
