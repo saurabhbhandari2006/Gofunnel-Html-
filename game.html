@@ -103,9 +103,19 @@
 
 
             <a href="#" class="list-group-item" style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
-                <h2 style="text-align: center;color: #ffffff;padding: 10%">
-
-                </h2>
+                <h2 style="text-align: center;color: #ffffff;padding: 10%"></h2>
+            </a>
+            <a href="#" class="list-group-item" style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
+                <h2 style="text-align: center;color: #ffffff;padding: 10%"></h2>
+            </a>
+            <a href="#" class="list-group-item" style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
+                <h2 style="text-align: center;color: #ffffff;padding: 10%"></h2>
+            </a>
+            <a href="#" class="list-group-item" style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
+                <h2 style="text-align: center;color: #ffffff;padding: 10%"></h2>
+            </a>
+            <a href="#" class="list-group-item" style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
+                <h2 style="text-align: center;color: #ffffff;padding: 10%"></h2>
             </a>
 
             <div style="float: right;color: white;padding-top: 2%;">Back</div>
@@ -117,66 +127,53 @@
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab"style="position: relative;height: 325px">
         <!-- Welcome section -->
-        <div class="bhoechie-tab-content active" style="text-align: center">
+        <div class="bhoechie-tab-content active" id="start-page" style="text-align: center">
 
             <br/>
-
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4 style="color: grey">
+                        The objective of the game is to engage clients
+                        <br>
+                        and make them interested in our products in answering 5 of their questions.
+                        <br>
+                        <br>
+                        You receive AED 1k for each correctly answered question.
+                    </h4>
+                </div>
+            </div>
 
 
             <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <br/>
-            <a href="#" id="start-game" class="btn  btn-lg start-game" style="background-image: url('assets/image/image8.png');background-size: 100% 100%;color: #ffffff;padding: 3%;">
+            <a href="#" id="start-game" onclick="startQuestion();" class="btn  btn-lg start-game" style="background-image: url('assets/image/image8.png');background-size: 100% 100%;color: #ffffff;padding: 3%;">
             Start the Game</a>
             </div>
             </div>
             </div>
-            <div class="bhoechie-tab-content">
+        <!----------------on start page load----------------->
+            <div class="bhoechie-tab-content" id="question-page" style="display: none">
 
-
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none">
-            <div class="qpane-header">
-            <h1>Question</h1>
-            </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <br/>
-            <i class="livicon"></i>
-            </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="q-statement">
-            </div>
+            <div class="q-statement">Question here </div>
             </div>
             <div style="position: absolute;right: 15px;top: 129px;z-index: 1;"><img src="assets/image/image9.png" style="height:196px"></div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="answer-block opta"
-            id="q_<%= @game.id %>_<%= question.id rescue Question.first.id %>_opta">A.<%=
-            question.opta rescue Question.first.opta %>
-            </div>
+            <div class="answer-block opta" id="opt-a">A.</div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="answer-block optb"
-            id="q_<%= @game.id %>_<%= question.id rescue Question.first.id %>_optb">B.<%=
-            question.optb rescue Question.first.optb %>
-            </div>
+            <div class="answer-block optb" id="opt-b">B.</div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="answer-block optc"
-            id="q_<%= @game.id %>_<%= question.id rescue Question.first.id %>_optc">C.<%=
-            question.optc rescue Question.first.optc %>
-            </div>
+            <div class="answer-block optc"id="opt-c">C.</div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="answer-block optd"
-            id="q_<%= @game.id %>_<%= question.id rescue Question.first.id %>_optd">D.<%=
-            question.optd rescue Question.first.optd %>
-            </div>
+            <div class="answer-block optd" id="opt-d">D.</div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="messaging">
-            <h2 id="default-msg-<%= index+1 %>" class="default-msg">Click on an option to select
-            it as your answer.<br/><br/></h2>
+            <h2 id="default-msg" class="default-msg">Click on an option to select it as your answer.<br/><br/></h2>
 
 
             <h3 id="responser-<%= index+1 %>" class="responser"></h3>
@@ -187,8 +184,7 @@
             </a>
             </div>
             </div>
-            <% end %>
-            </div>
+             </div>
             </div>
         </div>
     </div>
@@ -439,115 +435,114 @@
 <!--</div>-->
 
 <!--</div>-->
-</div>
+<!--</div>-->
 
-</div>
 
-<div class="modal fade" id="gameResult" style="text-align: center">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Game Over</h4>
-            </div>
-            <div class="modal-body">
-                <div id="end-message"></div>
-                <br/>
 
-                <div id="result-message" style="display: none;">
-                    <table class="table table-bordered" id="result-table">
-                        <tr>
-                            <th style="text-align: center">Level</th>
-                            <th style="text-align: center">Correct</th>
-                            <th style="text-align: center"></th>
-                        </tr>
-                    </table>
-                </div>
-                <h2 style='color:#666;display: none;' id="wonMsg">You earned your badges</h2><br/>
+<!--<div class="modal fade" id="gameResult" style="text-align: center">-->
+    <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<h4 class="modal-title">Game Over</h4>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<div id="end-message"></div>-->
+                <!--<br/>-->
 
-                <div id="won-badges">
-                    <div class="badge">
-                        <div class="iconned lead-generation">
-                            <i class="livicon" data-name="users" data-size="28" data-color="#3f56aa"
-                               title="Lead Champion"></i>
-                        </div>
-                    </div>
-                    <div class="badge">
-                        <div class="iconned client-engagement">
-                            <i class="livicon" data-name="star-full" data-size="28" data-color="red"
-                               title="Star Seller"></i>
-                        </div>
-                    </div>
-                    <div class="badge">
-                        <div class="iconned sales-application">
-                            <i class="livicon" data-name="checked-on" data-size="28" data-color="white"
-                               title="Perfect Paperwork"></i>
-                        </div>
-                    </div>
-                    <div class="badge">
-                        <div class="iconned credit-decision">
-                            <i class="livicon" data-name="legal" data-size="28" data-color="darkgreen"
-                               title="Top Rating"></i>
-                        </div>
-                    </div>
-                    <div class="badge">
-                        <div class="iconned disbursement">
-                            <i class="livicon" data-name="thumbs-up" data-size="28" data-color="gold"
-                               title="Happy Customer"></i>
-                        </div>
-                    </div>
-                </div>
-                <h2 style='color:#666;display: none;' id="lostMsg">You lost some badges</h2><br/>
+                <!--<div id="result-message" style="display: none;">-->
+                    <!--<table class="table table-bordered" id="result-table">-->
+                        <!--<tr>-->
+                            <!--<th style="text-align: center">Level</th>-->
+                            <!--<th style="text-align: center">Correct</th>-->
+                            <!--<th style="text-align: center"></th>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+                <!--<h2 style='color:#666;display: none;' id="wonMsg">You earned your badges</h2><br/>-->
 
-                <div id="lost-badges">
-                    <div class="badge">
-                        <div class="iconned lead-generation">
-                            <i class="livicon" data-name="users" data-size="28" data-color="#3f56aa"
-                               title="Lead Champion"></i>
-                        </div>
-                    </div>
-                    <div class="badge">
-                        <div class="iconned client-engagement">
-                            <i class="livicon" data-name="star-full" data-size="28" data-color="red"
-                               title="Star Seller"></i>
-                        </div>
-                    </div>
-                    <div class="badge">
-                        <div class="iconned sales-application">
-                            <i class="livicon" data-name="checked-on" data-size="28" data-color="white"
-                               title="Perfect Paperwork"></i>
-                        </div>
-                    </div>
-                    <div class="badge">
-                        <div class="iconned credit-decision">
-                            <i class="livicon" data-name="legal" data-size="28" data-color="darkgreen"
-                               title="Top Rating"></i>
-                        </div>
-                    </div>
-                    <div class="badge">
-                        <div class="iconned disbursement">
-                            <i class="livicon" data-name="thumbs-up" data-size="28" data-color="gold"
-                               title="Happy Customer"></i>
-                        </div>
-                    </div>
-                </div>
-                <br/>
-            </div>
-            <div class="modal-footer" style="text-align: center">
-                <button type="button" id="restart-game" class="btn btn-primary btn-lg">Play Again</button>
-                <!--------------------------------------------------------------------------------------------->
-                <!--
-                    Objective: Button to redirect back to Home Page to play unlocked mode
-                -->
-                <!--------------------------------------------------------------------------------------------->
-                <button type="button" id="back-to-home" class="btn btn-info btn-lg">Home Page</button>
-                <!--------------------------------------------------------------------------------------------->
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-</div>
+                <!--<div id="won-badges">-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned lead-generation">-->
+                            <!--<i class="livicon" data-name="users" data-size="28" data-color="#3f56aa"-->
+                               <!--title="Lead Champion"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned client-engagement">-->
+                            <!--<i class="livicon" data-name="star-full" data-size="28" data-color="red"-->
+                               <!--title="Star Seller"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned sales-application">-->
+                            <!--<i class="livicon" data-name="checked-on" data-size="28" data-color="white"-->
+                               <!--title="Perfect Paperwork"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned credit-decision">-->
+                            <!--<i class="livicon" data-name="legal" data-size="28" data-color="darkgreen"-->
+                               <!--title="Top Rating"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned disbursement">-->
+                            <!--<i class="livicon" data-name="thumbs-up" data-size="28" data-color="gold"-->
+                               <!--title="Happy Customer"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<h2 style='color:#666;display: none;' id="lostMsg">You lost some badges</h2><br/>-->
+
+                <!--<div id="lost-badges">-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned lead-generation">-->
+                            <!--<i class="livicon" data-name="users" data-size="28" data-color="#3f56aa"-->
+                               <!--title="Lead Champion"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned client-engagement">-->
+                            <!--<i class="livicon" data-name="star-full" data-size="28" data-color="red"-->
+                               <!--title="Star Seller"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned sales-application">-->
+                            <!--<i class="livicon" data-name="checked-on" data-size="28" data-color="white"-->
+                               <!--title="Perfect Paperwork"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned credit-decision">-->
+                            <!--<i class="livicon" data-name="legal" data-size="28" data-color="darkgreen"-->
+                               <!--title="Top Rating"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="badge">-->
+                        <!--<div class="iconned disbursement">-->
+                            <!--<i class="livicon" data-name="thumbs-up" data-size="28" data-color="gold"-->
+                               <!--title="Happy Customer"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<br/>-->
+            <!--</div>-->
+            <!--<div class="modal-footer" style="text-align: center">-->
+                <!--<button type="button" id="restart-game" class="btn btn-primary btn-lg">Play Again</button>-->
+                <!--&lt;!&ndash;-----------------------------------------------------------------------------------------&ndash;&gt;-->
+                <!--&lt;!&ndash;-->
+                    <!--Objective: Button to redirect back to Home Page to play unlocked mode-->
+                <!--&ndash;&gt;-->
+                <!--&lt;!&ndash;-----------------------------------------------------------------------------------------&ndash;&gt;-->
+                <!--<button type="button" id="back-to-home" class="btn btn-info btn-lg">Home Page</button>-->
+                <!--&lt;!&ndash;-----------------------------------------------------------------------------------------&ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /.modal-content &ndash;&gt;-->
+    <!--</div>-->
+    <!--&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
+<!--</div>-->
 </div>
 </div>
 </div>
