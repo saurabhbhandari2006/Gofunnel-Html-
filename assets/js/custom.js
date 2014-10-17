@@ -15,6 +15,7 @@ function initTheme() {
 $(function() {
 //    eraseCookie("aed");
 //    eraseCookie("gameCount");
+    initGame();
 });
 
 function initGame() {
@@ -23,18 +24,15 @@ function initGame() {
         createCookie("aed", aed, 30);
         createCookie("gameCount", 0, 30);
     }
-
     gameSelect();
 }
 
 function gameSelect() {
     answer = [];
     result = [];
-    $("#endResult").empty();
-    $("#game").fadeOut();
-    $("#message").fadeOut();
-    $("#gameSelect").fadeIn();
-    $("#endResult").fadeOut();
+    $("#main-page").fadeIn();
+    $("#play-mode-game").fadeOut();
+    $("#gameResult").fadeOut();
     $("#qid").text(0);
     console.log("aed:" + readCookie("aed"));
     console.log("gameCount: " + readCookie("gameCount"));
@@ -45,9 +43,7 @@ function gameSelect() {
             var mode = ""+id.charAt(id.length-1);
             setQuestions(mode);
             showGame();
-            setTimeout(function() {
-                startGame(mode);
-            }, 2000);
+            start(mode);
         }
     });
 }
@@ -60,15 +56,19 @@ function setQuestions(mode) {
 }
 
 function showGame() {
-    $("#gameSelect").fadeOut();
+    $("#main-page").fadeOut();
     $("#game").fadeIn();
     newQuestion = true;
 }
 
 function showQuestion(mode) {
     var qid = parseInt($("#qid").text());
+    $("#que_name").text("Question "+(parseInt($("#qid").text())+1));
     var question = questionList[qid];
     console.log(question);
+    var id = "#q1"+(qid+1);
+    $(id).css({'backgroundImage':"url('assets/image/1.png')"})
+    console.log(id);
     $("#question-statement").text(question.statement);
     $("#opta").text(question.opta);
     $("#optb").text(question.optb);
@@ -79,13 +79,66 @@ function showQuestion(mode) {
 }
 
 function startGame(mode) {
+    $("#opta").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+    $("#optb").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+    $("#optc").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
+    $("#optd").css({background: 'linear-gradient(to right, rgba(0, 133, 201, 1) 0%, rgba(63, 75, 155, 1) 63%) repeat scroll 0 0 rgba(0, 0, 0, 0)'});
     var qid = parseInt($("#qid").text());
-    if(qid < 5) {
-        showQuestion(mode);
-    } else {
-        showEndResult();
+    showQuestion();
+
+
+}
+
+function start(mode) {
+    $("#qid").text("0");
+    setTimeout(function() {
+        $("#play-mode-game").fadeOut();
+        $("#gameA").css({opacity:"1"});
+        $("#gameB").css({opacity:"1"});
+        $("#play-mode-game").fadeIn();
+
+        if(mode == 1 || mode == 3){
+            $("#gameA").fadeIn();
+            $("#gameB").fadeOut();
+        } else {
+            $("#gameA").fadeOut();
+            $("#gameB").fadeIn();
+        }
+
+
+        $("#start-page").fadeIn();
+        $("#question-page").fadeOut();
+        $("#gameResult").fadeOut();
+        $("#result-table").empty();
+        $("#responser").text("");
+    }, 500);
+
+    switch(mode) {
+        case "1":
+            $("#que_name").text("Prove your UAB Product Knowledge");
+            break;
+
+        case "2":
+            $("#que_name").text("Prove your Sales Funnel Knowledge");
+            break;
+
+        case "3":
+            $("#que_name").text("Prove your Market and Competitive Knowledge");
+            break;
+
+        case "4":
+            $("#que_name").text("Prove your Hidden Level Knowledge");
+            break;
     }
 
+    $("#start-game").on('click', function() {
+        $("#start-page").fadeOut();
+        setTimeout(function() {
+            $("#question-page").fadeIn();
+        }, 500);
+
+        startGame(mode);
+    });
 }
 
 function bindAnswer(mode) {
@@ -102,48 +155,105 @@ function processAnswer(answer, mode) {
     var ans = ""+answer.charAt(answer.length-1)
     var qid = parseInt($("#qid").text());
     if(questionList[qid].correct == ans) {
-        result.push("correct");
+        $("#"+answer).css({background: 'none repeat scroll 0% 0% green'});
+        $("#responser").text("Correct!");
+        result.push("Correct");
     } else {
         if(mode == 3 || mode == 4)
         {
             $("#message").fadeIn();
-            $("#message").text("Uh-oh! You lost the client.");
+            $("#responser").text("Uh-oh! You lost the client.");
             setTimeout(function() {
                 addGame();
                 gameSelected = false;
                 gameSelect();
             }, 2000)
         } else {
-            result.push("wrong");
+            $("#responser").text("Wrong!");
+            $("#"+answer).css({background: 'none repeat scroll 0% 0% red'});
+            result.push("Wrong");
         }
-
     }
-    $("#result").text(result[qid]);
     qid++;
     $("#qid").text(qid);
+    $("#default-msg").fadeOut();
     setTimeout(function() {
-        answerSelected = false;
-        $("#result").text("");
-        startGame(mode);
-    }, 2000);
+        if(qid < 5)
+            $("#next-level").fadeIn();
+
+        $("#responser").fadeIn();
+    }, 500);
+
+
+    if(qid < 5) {
+        nextQuestion(mode);
+    } else {
+        setTimeout(function() {
+            showEndResult(mode);
+        }, 1000);
+
+    }
+
+
 }
 
-function showEndResult() {
-    $("#game").fadeOut();
-    $("#endResult").fadeIn();
+function nextQuestion(mode) {
+    $("#next-level").on('click', function() {
+        if(answerSelected == true) {
+            answerSelected = false;
+            $("#default-msg").fadeIn();
+            $("#next-level").fadeOut();
+            $("#responser").fadeOut();
+            $("#responser").text("");
+            startGame(mode);
+        }
+    });
+}
+
+function showEndResult(mode) {
+//    $("#gameA").css({opacity: '0.5'});
+//    $("#gameB").css({opacity: '0.5'});
+    setTimeout(function() {
+        $("#gameResult").css({opacity:"1"}).show();
+        $("#gameA").css({opacity:"0.3"});
+    }, 500);
     addGame();
     addAED();
     setTimeout(function() {
+        $("#result-table").append(
+            "<tr>" +
+                "<th style='text-align: center'>Level</th>" +
+                "<th style='text-align: center'>Correct</th>" +
+                "<th style='text-align: center'></th>" +
+            "</tr>"
+        );
         for(var i=0; i<5; i++){
-            $("#endResult").append("<tr><td align='left'> Question " + (i+1) + "</td><td align='right'>"+ result[i] + "</td></tr>");
+            $("#result-table").append(
+                "<tr align='center'>" +
+                    "<td> Question " + (i+1) + "</td>" +
+                    "<td>"+ result[i] + "</td>" +
+                    "<td> <a target='blank' href='#'>Read More</a> </td>"  +
+                    "</tr>"
+            );
         }
 
-        setTimeout(function() {
+        $("#restart-game").on('click', function() {
+            answerSelected = false;
+            start(mode);
+        });
+
+        $("#back-to-home").on('click', function() {
+            answerSelected = false;
             gameSelected = false;
             gameSelect();
-        }, 4000);
+        });
 
-    }, 1000);
+//        setTimeout(function() {
+//            gameSelected = false;
+//            gameSelect();
+//        }, 4000);
+
+    }, 500);
 }
 
 function addGame() {

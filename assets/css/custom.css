@@ -975,3 +975,7 @@ and (max-device-width : 1024px)  {
     background-size: 100% 100%, 100% 100%;
     }
 }
+
+#modal-dialog {
+    transform: translate3d(0px, 5%, 0px);
+}
