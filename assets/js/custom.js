@@ -14,3 +14,6 @@ $("#start-game-1").click(function(){
 $("#start-page-game2").hide();
 $("#question-block").show();
 });
+$("#start-game-2").click(function(){
+$("#gameResult").show();
+});
