@@ -1,4 +1,4 @@
-var initAED = 10;
+var initAED = 0;
 
 var questions = [
     {
