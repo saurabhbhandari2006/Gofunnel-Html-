@@ -4,60 +4,555 @@
     <meta charset="UTF-8">
     <title>Go Funnel</title>
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 
 </head>
 <body>
 <div id="game-wrapper">
-    <div id="game-select">
-        <div id="salesfunnel-and-toughmarket">
-            <div id="salesfunnel"><span style="margin-top: 4%;position: absolute">Rock the sales funnel</span>
+<div id="main-page">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="homepage-wrapper">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0">
+                        <div class="rock_sale">
+                            <span class="rock_sale_text">&nbsp; Rock the sales funnel</span>
 
-                <img id="button2" class="game-image" src="assets/image/image3.png">
+                            <div class="rock_image">
+                                <img src="assets/image/image3.png" class="rock_sale_image"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 win_box">
+                        <span class="win_box_text">Win a tough Market</span>
 
-            </div>
-            <div id="toughtmarket"><span style="margin: 4% 0 0 47%;position: absolute">Win a tough market</span>
-                <img id="button3" class="game-image" src="assets/image/image4.png">
-            </div>
-        </div>
-        <div id="newhire-and-bigdeal">
-            <div id="newhire"><span style="margin-top: 17%;position: absolute">Now your product<br>better than<br> a new hire</span>
-                <img id="button1" class="game-image" src="assets/image/image2_old.png">
-            </div>
-            <div id="image-center">
-                <img id="center-image" class="game-image" src="assets/image/cartoonwoman.png">
-            </div>
-            <div id="bigdeal"><span style="margin-top: 25%;position: absolute;left: 21%">Close a big deal</span>
-                <img id="button4" class="game-image" src="assets/image/image5.png">
-            </div>
-        </div>
-        <div id="great-sales-challenge">
-            <div id="great-sales-image-box">
-                <img id="sales-image" class="game-image" src="assets/image/shape_and_text.png">
+                        <div class="win_image">
+                            <img src="assets/image/image4.png" class="win_image_active">
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 product_sale ">
+                        <div class="product_sale_back">
+                            <div class="product_text"> Know your product <br> better than <br>a new hire</div>
+                        </div>
+                        <div class="product_image">
+                            <img src="assets/image/image2_old.png" class="image_product_sale" style="height:100%; width:100%" />
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+                        <img src="assets/image/cartoon woman.png" style="height:235px" >
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 deal_box">
+                        <div class="game-mode-wrapper">
+                            <div class="game-mode game-mode-unlocked deal_box_back">
+                                <div class="deal_text">Close a big deal</div>
+                                <div style="float: right;padding-right: 5%;color: #ffffff;">
+                                    <img src="assets/image/check.png">
+
+                                    <div style="font-size: 0.6em">Monthly target completed</div>
+                                </div>
+
+
+                                <div class="deal_image">
+
+                                    <img src="assets/image/image5.png" class="deal_image_active">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 col-sm-8 col-md-10 col-lg-8 col-lg-offset-2 col-md-offset-1 col-sm-offset-2 col-xs-offset-2">
+                        <img src="assets/image/shape_and_text.png" style="width:100%; height:225px" >
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!--<div id="game-play-div">-->
-    <!--<div id="game-box-1" class="game-data">-->
-    <!--<div id="question-box">-->
-    <!--saurabh-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div id="game-box-2" class="game-data">-->
-    <!--<p>Welcome to game 2</p>-->
-    <!--</div>-->
-    <!--<div id="game-box-3" class="game-data">-->
-    <!--<p>Welcome to game 3</p>-->
-    <!--</div>-->
-    <!--<div id="game-box-4" class="game-data">-->
-    <!--<p>Welcome to game 4</p>-->
-    <!--</div>-->
-    <!--<button id="back" onclick="back();">Back</button>-->
-    <!--</div>-->
 
+<!----------------------------------------------play mode game---------------------------------------->
+
+<div id="play-mode-game">
+<div class="container">
+<br/>
+<br/>
+
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+<div class="game-wrapper" id="play_mode_game_wrapper">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-menu"
+         style="background-color: #009fe3; ;padding: 2%;box-shadow: #666 3px 3px 5px 1px;">
+        <img src="assets/image/image2.png"  style="float: left;position: absolute;top: 0;left:-7%;width:100px" class="img-responsive">
+
+        <h2 id="que_name"
+            style="font-family: 'Impact', sans-serif;text-align: center;color: white;padding:2%">Prove your UAB Product Knowledge</h2>
+
+        <div style="float: left;padding:0 3%"><img src="assets/image/image7.png" style="width:80px" class="img-responsive">
+        </div>
+
+
+        <div class="list-group" style="float: left; width: 80%">
+
+
+            <a href="#" class="list-group-item" style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
+                <h2 style="text-align: center;color: #ffffff;padding: 10%">
+
+                </h2>
+            </a>
+
+            <div style="float: right;color: white;padding-top: 2%;">Back</div>
+            <div style="float: right;padding-top:1%"><img src="assets/image/arrows.png" style="width:35px" ></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab"style="position: relative;height: 325px">
+        <!-- Welcome section -->
+        <div class="bhoechie-tab-content active" style="text-align: center">
+
+            <br/>
+
+
+
+            <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <br/>
+            <a href="#" id="start-game" class="btn  btn-lg start-game" style="background-image: url('assets/image/image8.png');background-size: 100% 100%;color: #ffffff;padding: 3%;">
+            Start the Game</a>
+            </div>
+            </div>
+            </div>
+            <div class="bhoechie-tab-content">
+
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none">
+            <div class="qpane-header">
+            <h1>Question</h1>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <br/>
+            <i class="livicon"></i>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="q-statement">
+            </div>
+            </div>
+            <div style="position: absolute;right: 15px;top: 129px;z-index: 1;"><img src="assets/image/image9.png" style="height:196px"></div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="answer-block opta"
+            id="q_<%= @game.id %>_<%= question.id rescue Question.first.id %>_opta">A.<%=
+            question.opta rescue Question.first.opta %>
+            </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="answer-block optb"
+            id="q_<%= @game.id %>_<%= question.id rescue Question.first.id %>_optb">B.<%=
+            question.optb rescue Question.first.optb %>
+            </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="answer-block optc"
+            id="q_<%= @game.id %>_<%= question.id rescue Question.first.id %>_optc">C.<%=
+            question.optc rescue Question.first.optc %>
+            </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="answer-block optd"
+            id="q_<%= @game.id %>_<%= question.id rescue Question.first.id %>_optd">D.<%=
+            question.optd rescue Question.first.optd %>
+            </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="messaging">
+            <h2 id="default-msg-<%= index+1 %>" class="default-msg">Click on an option to select
+            it as your answer.<br/><br/></h2>
+
+
+            <h3 id="responser-<%= index+1 %>" class="responser"></h3>
+            <br/>
+            <a href="#" id="next-level-<%= index+1 %>" class="btn btn-success btn-lg next-level"
+            style="display: none">
+            Next Question
+            </a>
+            </div>
+            </div>
+            <% end %>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Stats Panel-->
+<!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">-->
+<!--<!-- Nav tabs -->-->
+<!--<ul class="nav nav-tabs tab-custom-style" role="tablist">-->
+<!--<li class="active"><a href="#my-stats" role="tab" data-toggle="tab">Me</a></li>-->
+<!--<li><a href="#trophycase" role="tab" data-toggle="tab">Badges</a></li>-->
+<!--<li><a href="#all-SOs" role="tab" data-toggle="tab">All SOs</a></li>-->
+<!--<% unless @top_branches.count<5 %>-->
+<!--<li><a href="#branches" role="tab" data-toggle="tab">Branches</a></li>-->
+<!--<% end %>-->
+<!--<li style="background: #c9302c;"><%= link_to "Back", "/", role: "tab", method: :get, :style => "color:white;" %>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div class="tab-content">-->
+<!--<div class="tab-pane fade in active" id="my-stats">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">-->
+<!--<h4>-->
+<!--<%= current_user.name %>-->
+<!--<br/>-->
+<!--<small><%= @officer.branch.name %> Branch</small>-->
+<!--</h4>-->
+<!--</div>-->
+<!--<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">-->
+<!--<div style="display: table">-->
+<!--<div class="circled">-->
+<!--<%#= @conversion %>-->
+<!--<%= @officer.turn_left %>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div style="text-align: center">Life</div>-->
+<!--</div>-->
+<!--<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">-->
+<!--<div style="display: table">-->
+<!--<div class="circled">-->
+<!--<%= @rank %>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div style="text-align: center">Rank</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div id="my-scores-panel" class="row">-->
+<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">-->
+<!--<h3>-->
+<!--<small>AED</small>-->
+<!--<%= @officer.score %>-->
+<!--<small>k</small>-->
+<!--</h3>-->
+<!--(total revenue)-->
+<!--</div>-->
+<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="border-left: 1px solid lightgray">-->
+<!--<h3><%= @officer.clients %>-->
+<!--<small> clients</small>-->
+<!--</h3>-->
+<!--(total clients booked)-->
+<!--</div>-->
+<!--</div>-->
+<!--<hr/>-->
+<!--<div id="quick-stats" class="row">-->
+<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+<!--<h4>My Quick Stats</h4>-->
+<!--<ul id="statlist">-->
+<!--<li>Played <%= Game.where(officer_id: @officer.id, mode_id: nil).count %> Sales funnel games, <%=-->
+<!--@product_count %> Bank Product games and <%= @market_count %> Market & Competitive games-->
+<!--</li>-->
+<!--<!--<li>Conversion rate is <%#= @conversion %></li>-->-->
+<!--<li>On average AED <%= (@officer.score/@officer.clients).to_i rescue 0 %> k per client</li>-->
+<!--<!--<li>Highest success rate in <%#= ModeMaster.find(params[:mode_master_id]).mode_name %></li>-->-->
+<!--<li>Cumlative success rate in <%#= @bestat.downcase %><%=-->
+<!--ModeMaster.find(params[:mode_master_id]).mode_name %> Module is-->
+<!--<%= ((Mode.where(:officer_id => @officer.id, :mode_master_id => params[:mode_master_id]).map{|e|-->
+<!--Game.where(:mode_id => e.id)}.flatten.map{|j| j.answers.select{|k| k.correct ==-->
+<!--true}.length}.reduce(:+).to_f/Mode.where(:officer_id => @officer.id, :mode_master_id =>-->
+<!--params[:mode_master_id]).map{|e| Game.where(:mode_id => e.id)}.flatten.map{|j|-->
+<!--j.answers.length}.reduce(:+).to_f)*100).round rescue 0%>%-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--<hr/>-->
+<!--<div id="success-chart" class="row">-->
+<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+<!--<h4>Success Rate per Level</h4>-->
+
+<!--<div class="graphs">-->
+<!--<%# @stages.count.times do |cnt| %>-->
+<!--<div class="col-lg-2 col-md-1 col-sm-1 col-xs-2">-->
+<!--<div class="graph">-->
+<!-- <span id="score-lvl-<%#= cnt+1 %>"><%#= @success[cnt] %>-->
+<!-- </span><%#= "%" unless @success[cnt] == "NA" %>-->
+<!--<div class="graph-inner"></div>-->
+<!--</div>-->
+<!--<%#= cnt+1 %>-->
+<!--</div>-->
+<!--<%# end %>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="tab-pane fade" id="trophycase">-->
+<!--<h4><%= @designation %></h4>-->
+<!--<br/>-->
+<!--<% @stages.each_with_index do |stage, index| %>-->
+<!--<% stage = Cycle.first.stages[index] %>-->
+<!--<% if @badges[index]==1 %>-->
+<!--<div class="badge" style="display: inline-block">-->
+<!--<div class="iconned <%= stage.name.downcase.gsub("-->
+<!--", "-") %>">-->
+<!--<i class="livicon" data-name="<%= @livicons[index] %>" data-size="28" data-color="<%= @colors[index] %>"-->
+<!--title="<%= @titles[index] %>"></i>-->
+<!--</div>-->
+<!--</div>-->
+<!--<% else %>-->
+<!--<div class="badge" style="display: inline-block;">-->
+<!--<div class="iconned grayed" style="pointer-events:none;">-->
+<!--<i class="livicon" data-name="<%= @livicons[index] %>" data-size="28" data-color="gray"-->
+<!--title="<%= @titles[index] %>"></i>-->
+<!--</div>-->
+<!--</div>-->
+<!--<% end %>-->
+<!--<% end %>-->
+<!--<% if @badges[5]==1 %>-->
+<!--<div class="badge" style="display: inline-block">-->
+<!--<div class="iconned conversion-rate">-->
+<!--<i class="livicon" data-name="<%= @livicons[5] %>" data-size="28" data-color="<%= @colors[5] %>"-->
+<!--title="<%= @titles[5] %>"></i>-->
+<!--</div>-->
+<!--</div>-->
+<!--<% else %>-->
+<!--<div class="badge" style="display: inline-block">-->
+<!--<div class="iconned grayed" style="pointer-events:none;">-->
+<!--<i class="livicon" data-name="<%= @livicons[5] %>" data-size="28" data-color="gray"-->
+<!--title="<%= @titles[5] %>"></i>-->
+<!--</div>-->
+<!--</div>-->
+<!--<% end %>-->
+<!--<% if @badges[6]==1 %>-->
+<!--<div class="badge" style="display: inline-block">-->
+<!--<div class="iconned five-round">-->
+<!--<i class="livicon" data-name="<%= @livicons[6] %>" data-size="28" data-color="<%= @colors[6] %>"-->
+<!--title="<%= @titles[6] %>"></i>-->
+<!--</div>-->
+<!--</div>-->
+<!--<% else %>-->
+<!--<div class="badge" style="display: inline-block">-->
+<!--<div class="iconned grayed" style="pointer-events:none;">-->
+<!--<i class="livicon" data-name="<%= @livicons[6] %>" data-size="28" data-color="gray"-->
+<!--title="<%= @titles[6] %>"></i>-->
+<!--</div>-->
+<!--</div>-->
+<!--<% end %>-->
+<!--<br/>-->
+
+<!--<div class="badge-description">-->
+<!--<h4 class="badge-title"></h4>-->
+
+<!--<p class="badge-desc"></p>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="tab-pane fade" id="all-SOs">-->
+<!--<h4>-->
+<!--The Top 5 Superstars-->
+<!--<!--<a href="/allranks" target="_blank">(show all)</a>-->-->
+<!--</h4>-->
+<!--<table class="table table-condensed" style="font-size: 0.8em">-->
+<!--<tr>-->
+<!--<th>Rank</th>-->
+<!--<th>Officer</th>-->
+<!--<th>AED k</th>-->
+<!--</tr>-->
+<!--<% @top_officers.each_with_index do |officer, index| %>-->
+<!--<tr>-->
+<!--<td><%= index+1 %></td>-->
+<!--<td><%= officer.user.name %>, <%= officer.branch.name %></td>-->
+<!--<td><%= officer.score %></td>-->
+<!--</tr>-->
+<!--<% end %>-->
+<!--<tr>-->
+<!--<td colspan="3"><strong>My Rank</strong></td>-->
+<!--</tr>-->
+<!--<tr style="background: lightblue">-->
+<!--<td><%= @rank %></td>-->
+<!--<td><%= @officer.user.name %>, <%= @officer.branch.name %></td>-->
+<!--<td><%= @officer.score %></td>-->
+<!--</tr>-->
+<!--</table>-->
+
+<!--<hr/>-->
+
+<!--<h4>All SOs Quick Stats</h4>-->
+<!--<ul id="allstatlist">-->
+<!--<li><%= Game.all.select{|i| i.mode_id!= nil and i.mode.mode_master_id == params[:mode_master_id].to_i}.length %>-->
+<!--games played this cycle by <%= Game.all.select{|i| i.mode_id!= nil and i.mode.mode_master_id ==-->
+<!--params[:mode_master_id].to_i}.map{|j| j.officer}.uniq.length %>officers-->
+<!--</li>-->
+<!--<!--<li>Conversion rate is <%#= @conversion %></li>-->-->
+<!--<li>On average AED <%= Game.where(:mode_id => nil, :score => 1).map { |g| g.rev_value }.sum/Game.where(:mode_id-->
+<!--=> nil, :score => 1).length rescue 0%> k revenue per client-->
+<!--</li>-->
+<!--<li>Highest success rate in <%#= @bestat.downcase %><%= ModeMaster.find(params[:mode_master_id]).mode_name %>-->
+<!--Module is-->
+<!--<%= @all_so_hso %>%-->
+<!--</li>-->
+<!--</ul>-->
+<!--<!--<div id="all-success-chart" class="row">-->-->
+<!--<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->-->
+<!--<!--<h4>Success Rate per Level</h4>-->-->
+
+<!--<!--<div class="graphs">-->-->
+<!--<!--<%# @stages.count.times do |cnt| %>-->-->
+<!--<!--<div class="col-lg-2 col-md-1 col-sm-1 col-xs-2">-->-->
+<!--<!--<div class="graph">-->-->
+<!--<!--<span id="all-score-lvl-<%#= cnt+1 %>"><%#= @allsuccess[cnt] %></span>-->
+<!--"NA" %>-->
+<!--<!--<div class="graph-inner"></div>-->-->
+<!--<!--</div>-->-->
+<!--<!--<%#= cnt+1 %>-->-->
+<!--<!--</div>-->-->
+<!--<!--<%# end %>-->-->
+
+<!--<!--</div>-->-->
+<!--<!--</div>-->-->
+<!--<!--</div>-->-->
+
+<!--</div>-->
+<!--<div class="tab-pane fade" id="branches">-->
+<!--<h4>The Star Branches</h4>-->
+<!--<br/>-->
+<!--<table class="table table-condensed">-->
+<!--<tr>-->
+<!--<th>Branch</th>-->
+<!--<th>AED k</th>-->
+<!--</tr>-->
+<!--<% @top_branches.each do |branch| %>-->
+<!--<tr>-->
+<!--<td><%= branch.name %></td>-->
+<!--<td><%= branch.officers.map { |o| o.score }.sum %></td>-->
+<!--</tr>-->
+<!--<% end %>-->
+<!--</table>-->
+
+<!--<hr/>-->
+<!--</div>-->
+
+<!--</div>-->
+</div>
 
 </div>
+
+<div class="modal fade" id="gameResult" style="text-align: center">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Game Over</h4>
+            </div>
+            <div class="modal-body">
+                <div id="end-message"></div>
+                <br/>
+
+                <div id="result-message" style="display: none;">
+                    <table class="table table-bordered" id="result-table">
+                        <tr>
+                            <th style="text-align: center">Level</th>
+                            <th style="text-align: center">Correct</th>
+                            <th style="text-align: center"></th>
+                        </tr>
+                    </table>
+                </div>
+                <h2 style='color:#666;display: none;' id="wonMsg">You earned your badges</h2><br/>
+
+                <div id="won-badges">
+                    <div class="badge">
+                        <div class="iconned lead-generation">
+                            <i class="livicon" data-name="users" data-size="28" data-color="#3f56aa"
+                               title="Lead Champion"></i>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="iconned client-engagement">
+                            <i class="livicon" data-name="star-full" data-size="28" data-color="red"
+                               title="Star Seller"></i>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="iconned sales-application">
+                            <i class="livicon" data-name="checked-on" data-size="28" data-color="white"
+                               title="Perfect Paperwork"></i>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="iconned credit-decision">
+                            <i class="livicon" data-name="legal" data-size="28" data-color="darkgreen"
+                               title="Top Rating"></i>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="iconned disbursement">
+                            <i class="livicon" data-name="thumbs-up" data-size="28" data-color="gold"
+                               title="Happy Customer"></i>
+                        </div>
+                    </div>
+                </div>
+                <h2 style='color:#666;display: none;' id="lostMsg">You lost some badges</h2><br/>
+
+                <div id="lost-badges">
+                    <div class="badge">
+                        <div class="iconned lead-generation">
+                            <i class="livicon" data-name="users" data-size="28" data-color="#3f56aa"
+                               title="Lead Champion"></i>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="iconned client-engagement">
+                            <i class="livicon" data-name="star-full" data-size="28" data-color="red"
+                               title="Star Seller"></i>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="iconned sales-application">
+                            <i class="livicon" data-name="checked-on" data-size="28" data-color="white"
+                               title="Perfect Paperwork"></i>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="iconned credit-decision">
+                            <i class="livicon" data-name="legal" data-size="28" data-color="darkgreen"
+                               title="Top Rating"></i>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <div class="iconned disbursement">
+                            <i class="livicon" data-name="thumbs-up" data-size="28" data-color="gold"
+                               title="Happy Customer"></i>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" id="restart-game" class="btn btn-primary btn-lg">Play Again</button>
+                <!--------------------------------------------------------------------------------------------->
+                <!--
+                    Objective: Button to redirect back to Home Page to play unlocked mode
+                -->
+                <!--------------------------------------------------------------------------------------------->
+                <button type="button" id="back-to-home" class="btn btn-info btn-lg">Home Page</button>
+                <!--------------------------------------------------------------------------------------------->
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+</div>
+</div>
+</div>
+</div>
 <script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.js" type="text/javascript"></script>
 <script src="assets/js/custom.js" type="text/javascript"></script>
 </body>
 </html>
