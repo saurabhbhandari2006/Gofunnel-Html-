@@ -58,7 +58,7 @@
                                     <div class="game-mode game-mode-unlocked deal_box_back">
                                         <div class="deal_text">Close a big deal</div>
                                         <div style="float: right;padding-right: 5%;color: #ffffff;">
-                                            <img src="assets/image/check.png">
+                                            <img id="lock" src="assets/image/cross.png">
 
                                             <div style="font-size: 0.6em">Monthly target completed</div>
                                         </div>
@@ -86,6 +86,8 @@
 
         <div id="play-mode-game">
 
+            <input type="hidden" id="mode" />
+
             <div id="container" class="container">
                 <br/>
                 <br/>
@@ -108,26 +110,26 @@
 
                                 <div class="list-group" style="float: left; width: 80%">
 
-                                    <a id="q11" href="#" class="list-group-item"
+                                    <div id="q11" class="list-group-item"
                                        style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
                                         <h2 style="text-align: center;color: #ffffff; padding: 10%; margin-top: 17%" >1</h2>
-                                    </a>
-                                    <a id="q12" href="#" class="list-group-item"
+                                    </div>
+                                    <div id="q12" class="list-group-item"
                                        style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
                                         <h2 style="text-align: center;color: #ffffff;padding: 10%; margin-top: 17%">2</h2>
-                                    </a>
-                                    <a id="q13" href="#" class="list-group-item"
+                                    </div>
+                                    <div id="q13" class="list-group-item"
                                        style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
                                         <h2 style="text-align: center;color: #ffffff;padding: 10%; margin-top: 17%">3</h2>
-                                    </a>
-                                    <a id="q14" href="#" class="list-group-item"
+                                    </div>
+                                    <div id="q14" class="list-group-item"
                                        style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
                                         <h2 style="text-align: center;color: #ffffff;padding: 10%; margin-top: 17%">4</h2>
-                                    </a>
-                                    <a id="q15" href="#" class="list-group-item"
+                                    </div>
+                                    <div id="q15" class="list-group-item"
                                        style="width: 80px; float: left; background-image:url('assets/image/image6.png'); background-size: 100% 100%; border: none;background-color: transparent">
                                         <h2 style="text-align: center;color: #ffffff;padding: 10%; margin-top: 17%">5</h2>
-                                    </a>
+                                    </div>
 
                                     <div style="float: right;color: white;padding-top: 2%;"></div>
                                     <div style="float: right;padding-top:1%"><img src="assets/image/arrows.png" style="width:35px; display: none">
@@ -189,7 +191,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div class="answer-block optd answer" id="optd">D.</div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="messaging2">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="messaging">
                                         <h2 id="default-msg" class="default-msg">Click on an option to select it as your answer.</h2>
                                         <h3 id="responser" class="responser" style="display: none"></h3>
                                         <br/>
@@ -268,15 +270,16 @@
                                         <h3>Choose if you want to acquire a normal or a difficult client</h3>
                                         <br/>
                                         <div class="col-xs-5 col-sm-6 col-md-6 col-lg-5">
-                                            <a href="#" id="start-game-1" class="start-game btn btn-warning btn-lg">
-                                                <strong>Name</strong> <br/> Revenue:
-                                                AED 200k
-                                            </a>
+                                            <div href="#" id="start-game-1" class="start-game btn btn-warning btn-lg">
+                                                <div class="name"><strong>Player</strong></div>
+                                                Revenue: AED <div id="random1"></div>
+                                            </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                            <a href="#" id="start-game-2" class="start-game btn btn-danger btn-lg">
-                                                <strong>Name</strong> <br/> Revenue:
-                                                AED 800k</a>
+                                            <div href="#" id="start-game-2" class="start-game btn btn-danger btn-lg">
+                                                <div class="name"><strong>Player</strong></div>
+                                                Revenue: AED <div id="random2"></div>
+                                            </div>
                                         </div>
 
 
@@ -312,13 +315,13 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div class="answer-block optd answer" id="d">D.</div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="messaging">
-                                        <h2 id="default-msg-<%= index+1 %>" class="default-msg">Click on an option to select
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="messaging2">
+                                        <h2 id="default-msg2" class="default-msg">Click on an option to select
                                             it as your answer.</h2>
 
-                                        <h3 id="game2-responser" class="responser"></h3>
+                                        <h3 id="responser2" class="responser"></h3>
                                         <br/>
-                                        <a href="#" id="game2-next-level" class="btn btn-success btn-lg next-level" style="display: none">
+                                        <a href="#" id="next-level2" class="btn btn-success btn-lg next-level" style="display: none">
                                             Next Level </a>
                                     </div>
                                 </div>
