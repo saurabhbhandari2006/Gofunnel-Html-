@@ -1,28 +1,34 @@
 var answer;
 var result;
-var aed;
 var gameSelected = false;
 var answerSelected = false;
 var newQuestion;
 var questionList;
 
 function initTheme() {
-
 }
 
 function initGame() {
-    aed = initAED;
+    if(readCookie("aed") == null){
+        var aed = initAED;
+        createCookie("aed", aed, 30);
+        createCookie("gameCount", 0, 30);
+    }
+
     gameSelect();
 }
 
 function gameSelect() {
     answer = [];
     result = [];
+    $("#endResult").empty();
     $("#game").fadeOut();
     $("#message").fadeOut();
     $("#gameSelect").fadeIn();
     $("#endResult").fadeOut();
     $("#qid").text(0);
+    console.log("aed:" + readCookie("aed"));
+    console.log("gameCount: " + readCookie("gameCount"));
     $(".games").on('click', function() {
         if(gameSelected == false) {
             gameSelected = true;
@@ -93,6 +99,8 @@ function processAnswer(answer, mode) {
             $("#message").fadeIn();
             $("#message").text("Uh-oh! You lost the client.");
             setTimeout(function() {
+                addGame();
+                gameSelected = false;
                 gameSelect();
             }, 2000)
         } else {
@@ -113,9 +121,60 @@ function processAnswer(answer, mode) {
 function showEndResult() {
     $("#game").fadeOut();
     $("#endResult").fadeIn();
+    addGame();
+    addAED();
     setTimeout(function() {
         for(var i=0; i<5; i++){
             $("#endResult").append("<tr><td align='left'> Question " + (i+1) + "</td><td align='right'>"+ result[i] + "</td></tr>");
         }
+
+        setTimeout(function() {
+            gameSelected = false;
+            gameSelect();
+        }, 4000);
+
     }, 1000);
+}
+
+function addGame() {
+    var count = parseInt(readCookie("gameCount"));
+    count++;
+    eraseCookie("gameCount");
+    createCookie("gameCount", count, 30);
+}
+
+function addAED() {
+    var gameCount = parseInt(readCookie("gameCount"));
+    var conversion = (Math.floor(Math.random()*gameCount*100))%100;
+    console.log(conversion);
+    var aed = parseInt(readCookie("aed"));
+    console.log("Current aed:" + aed);
+    aed += conversion;
+    eraseCookie("aed");
+    createCookie("aed", aed, 30);
+}
+
+function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
 }

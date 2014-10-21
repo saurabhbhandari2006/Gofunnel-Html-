@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="custom.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="custom.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="8" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+            <state line="7" column="21" selection-start="135" selection-end="135" vertical-scroll-proportion="0.13996628" vertical-offset="22" max-vertical-offset="615">
               <folding>
                 <element signature="n#!!block;n#initTheme#0" expanded="false" />
                 <element signature="n#!!block;n#initGame#0" expanded="false" />
@@ -38,6 +38,11 @@
                 <element signature="n#!!block;n#bindAnswer#0" expanded="false" />
                 <element signature="n#!!block;n#processAnswer#0" expanded="false" />
                 <element signature="n#!!block;n#showEndResult#0" expanded="false" />
+                <element signature="n#!!block;n#addGame#0" expanded="false" />
+                <element signature="n#!!block;n#addAED#0" expanded="false" />
+                <element signature="n#!!block;n#createCookie#0" expanded="false" />
+                <element signature="n#!!block;n#readCookie#0" expanded="false" />
+                <element signature="n#!!block;n#eraseCookie#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -55,10 +60,8 @@
       <file leaf-file-name="custom-data.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/custom-data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3477" column="20" selection-start="106719" selection-end="106719" vertical-scroll-proportion="0.0" vertical-offset="51695" max-vertical-offset="52275">
-              <folding>
-                <element signature="n#!!block;n#shuffle#0" expanded="false" />
-              </folding>
+            <state line="3477" column="20" selection-start="100766" selection-end="100766" vertical-scroll-proportion="0.0" vertical-offset="51695" max-vertical-offset="52320">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,16 +69,16 @@
       <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14745">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="game.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="21" selection-start="1794" selection-end="1794" vertical-scroll-proportion="1.4481547" vertical-offset="61" max-vertical-offset="1125">
+            <state line="59" column="21" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="1125">
               <folding />
             </state>
           </provider>
@@ -91,14 +94,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assets/js/custom.js" />
         <option value="$PROJECT_DIR$/assets/js/custom-data.js" />
         <option value="$PROJECT_DIR$/game.html" />
+        <option value="$PROJECT_DIR$/assets/js/custom.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="792" />
+    <option name="y" value="24" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
   </component>
@@ -203,6 +206,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gofunnel" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -217,20 +222,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="792" width="1366" height="744" extended-state="6" />
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25757575" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -259,7 +264,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="8" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+        <state line="10" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="645">
           <folding>
             <element signature="n#!!block;n#initTheme#0" expanded="false" />
             <element signature="n#!!block;n#initGame#0" expanded="false" />
@@ -271,7 +276,91 @@
             <element signature="n#!!block;n#bindAnswer#0" expanded="false" />
             <element signature="n#!!block;n#processAnswer#0" expanded="false" />
             <element signature="n#!!block;n#showEndResult#0" expanded="false" />
+            <element signature="n#!!block;n#addGame#0" expanded="false" />
+            <element signature="n#!!block;n#addAED#0" expanded="false" />
+            <element signature="n#!!block;n#createCookie#0" expanded="false" />
+            <element signature="n#!!block;n#readCookie#0" expanded="false" />
+            <element signature="n#!!block;n#eraseCookie#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/custom-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3477" column="20" selection-start="100766" selection-end="100766" vertical-scroll-proportion="0.0" vertical-offset="51695" max-vertical-offset="52320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14745">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="21" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="645">
+          <folding>
+            <element signature="n#!!block;n#initTheme#0" expanded="false" />
+            <element signature="n#!!block;n#initGame#0" expanded="false" />
+            <element signature="n#!!block;n#gameSelect#0" expanded="false" />
+            <element signature="n#!!block;n#setQuestions#0" expanded="false" />
+            <element signature="n#!!block;n#showGame#0" expanded="false" />
+            <element signature="n#!!block;n#showQuestion#0" expanded="false" />
+            <element signature="n#!!block;n#startGame#0" expanded="false" />
+            <element signature="n#!!block;n#bindAnswer#0" expanded="false" />
+            <element signature="n#!!block;n#processAnswer#0" expanded="false" />
+            <element signature="n#!!block;n#showEndResult#0" expanded="false" />
+            <element signature="n#!!block;n#addGame#0" expanded="false" />
+            <element signature="n#!!block;n#addAED#0" expanded="false" />
+            <element signature="n#!!block;n#createCookie#0" expanded="false" />
+            <element signature="n#!!block;n#readCookie#0" expanded="false" />
+            <element signature="n#!!block;n#eraseCookie#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/custom-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3477" column="20" selection-start="100766" selection-end="100766" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="52320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14745">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="21" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="1125">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -279,15 +368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/custom-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3477" column="20" selection-start="106719" selection-end="106719" vertical-scroll-proportion="0.0" vertical-offset="51695" max-vertical-offset="52275">
-          <folding>
-            <element signature="n#!!block;n#shuffle#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -300,8 +380,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="21" selection-start="1794" selection-end="1794" vertical-scroll-proportion="1.4481547" vertical-offset="61" max-vertical-offset="1125">
+        <state line="59" column="21" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="1125">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/custom-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3477" column="20" selection-start="100766" selection-end="100766" vertical-scroll-proportion="0.0" vertical-offset="51695" max-vertical-offset="52320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="21" selection-start="135" selection-end="135" vertical-scroll-proportion="0.13996628" vertical-offset="22" max-vertical-offset="615">
+          <folding>
+            <element signature="n#!!block;n#initTheme#0" expanded="false" />
+            <element signature="n#!!block;n#initGame#0" expanded="false" />
+            <element signature="n#!!block;n#gameSelect#0" expanded="false" />
+            <element signature="n#!!block;n#setQuestions#0" expanded="false" />
+            <element signature="n#!!block;n#showGame#0" expanded="false" />
+            <element signature="n#!!block;n#showQuestion#0" expanded="false" />
+            <element signature="n#!!block;n#startGame#0" expanded="false" />
+            <element signature="n#!!block;n#bindAnswer#0" expanded="false" />
+            <element signature="n#!!block;n#processAnswer#0" expanded="false" />
+            <element signature="n#!!block;n#showEndResult#0" expanded="false" />
+            <element signature="n#!!block;n#addGame#0" expanded="false" />
+            <element signature="n#!!block;n#addAED#0" expanded="false" />
+            <element signature="n#!!block;n#createCookie#0" expanded="false" />
+            <element signature="n#!!block;n#readCookie#0" expanded="false" />
+            <element signature="n#!!block;n#eraseCookie#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
